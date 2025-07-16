@@ -73,12 +73,23 @@
     }
 
     .hero-image {
-      width: 100%;
-      max-height: 320px;
-      object-fit: contain;
-      margin-top: 40px;
-      animation: fadeIn 1.2s ease-out;
-    }
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  margin-top: 40px;
+  animation: fadeIn 1.2s ease-out;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-height: 200px;
+    margin-top: 20px;
+  }
+}
+
 
     footer {
       text-align: center;
@@ -132,17 +143,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
           <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
           <li class="nav-item"><a class="nav-link" href="sip.html">SIP Calculator</a></li>
-          <li class="nav-item"><a class="nav-link" href="client-login.html">Client Login</a></li>
-          <li class="nav-item"><a class="nav-link" href="appointment.html">Book Appointment</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="client-login.html">Client Login</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="appointment.html"> Book An Appointment</a></li>
         </ul>
+         <a href="client-login.html" class="btn btn-warning btn-sm">Client Login</a>
       </div>
     </div>
   </nav>
@@ -202,7 +216,7 @@
 
     <!-- Related Image -->
     <div class="text-center">
-      <img src="fi.png" alt="Finance Illustration" class="hero-image" />
+<img src="fi.png" alt="Finance Illustration" class="img-fluid rounded shadow hero-image" />
     </div>
   </div>
 

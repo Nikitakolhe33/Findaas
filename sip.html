@@ -16,18 +16,18 @@
     h2.section-title {
       font-size: 30px;
       font-weight: 700;
-      color: #04333e;
+      color: #b10cc7;
       margin-bottom: 20px;
     }
     .calculator {
-      background: #fff;
+      background: #b8b3b3;
       padding: 25px;
       margin-bottom: 30px;
       border-radius: 10px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
     .result-box {
-      background: #eef3f7;
+      background: #83068f;
       padding: 15px;
       margin-top: 15px;
       border-radius: 8px;
@@ -42,7 +42,31 @@
   </style>
 </head>
 <body>
-
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(5, 110, 158, 0.9);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="findas.png" alt="FINDAS Logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
+          <li class="nav-item"><a class="nav-link" href="sip.html">SIP Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="client-login.html">Client Login</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="appointment.html"> Book An Appointment</a></li>
+        </ul>
+        <a href="client-login.html" class="btn btn-warning btn-sm">Client Login</a>
+      </div>
+    </div>
+  </nav>
 <div class="container">
   <h2 class="section-title">SIP & Financial Calculators</h2>
 
@@ -190,7 +214,16 @@
     }
     document.getElementById('topUpResult').innerHTML = `Future Value: ₹${fv.toFixed(2)}`;
   }
-</script>
+  window.onscroll = function () {
+    let btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+</script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
