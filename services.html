@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FINDAS – Our Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+   background: linear-gradient(135deg, #2b2e4a, #5c258d, #4389a2);   
+      color: #fff;
+      font-family: Poppins, sans-serif;
+    }
+
+    header, footer {
+      background: rgba(5, 110, 158, 0.8);
+      padding: 15px 20px;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00c9a7;
+    }
+
+    .section-title {
+      text-align: center;
+      padding: 60px 20px 20px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .section-title h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #ccc;
+      max-width: 600px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: none;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: zoomIn 1.8s ease forwards;
+      opacity: 0;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0, 201, 167, 0.15);
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 201, 167, 0.3);
+    }
+
+    .service-card h4 {
+      color: #00c9a7;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #ccc;
+       animation: fadeIn 1.2s;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      margin-top: 40px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #bbb;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        animation-delay: 0.2s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <img src="findas.png" alt="FINDAS Logo" style="height: 40px;" />
+    </div>
+    <nav class="d-none d-md-flex">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="sip.html">SIP Calculator</a>
+      <a href="client-login.html">Client Login</a>
+      <a href="appointment.html">Book Appointment</a>
+    </nav>
+    <a href="client-login.html" class="btn btn-outline-light btn-sm">Client Login</a>
+  </header>
+
+  <!-- Title -->
+  <div class="section-title">
+    <h1>Our Services</h1>
+    <p>At FINDAS, we empower our clients through education, investment, and insurance strategies tailored for long-term success. We value transparency, honesty, and integrity.</p>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="container py-4">
+    <div class="row">
+      <!-- Investment Planning -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 0.2s;">
+          <h4>Investment Planning</h4>
+          <p>Diverse portfolios—mutual funds, bonds, stocks, gold—tailored to risk profiles. Full support from account opening to execution.</p>
+        </div>
+      </div>
+
+      <!-- Insurance Planning -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 0.4s;">
+          <h4>Insurance Planning</h4>
+          <p>Comprehensive life & general insurance—health, accident, vehicle to property. Includes renewal and claim assistance since 1999.</p>
+        </div>
+      </div>
+
+      <!-- Corporate Solutions -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 0.6s;">
+          <h4>Corporate Solutions</h4>
+          <p>Employee financial wellness via interactive webinars, live and recorded—covering budgeting, investing, debt management.</p>
+        </div>
+      </div>
+
+      <!-- Stock Investing -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 0.8s;">
+          <h4>Stock Investing</h4>
+          <p>Blue‑chip portfolios and technical picks. Tailored risk guidance to help long- and short-term investors.</p>
+        </div>
+      </div>
+
+      <!-- WILL Writing -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 1s;">
+          <h4>WILL Writing</h4>
+          <p>Peace of mind ensured by customized will preparation—guiding you step-by-step for clarity and legal compliance.</p>
+        </div>
+      </div>
+
+      <!-- Futures Trading -->
+      <div class="col-md-4">
+        <div class="service-card" style="animation-delay: 1.2s;">
+          <h4>Futures Trading</h4>
+          <p>FINDAS NIFTY FUTURES model—structured, math-based trading delivering 3–5× FD returns, 15 mins/day commitment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Image -->
+    <div class="text-center">
+      <img src="finance-hero.png" alt="Finance Illustration" class="hero-image" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-4">
+    <p>&copy; 2024 FINDAS. All rights reserved.</p>
+    <p>Have questions? Call us: <a href="tel:+918888830440" class="text-warning">+91 88888 30440</a> | Mon–Sat 11 AM–5 PM</p>
+  </footer>
+</body>
+</html>
