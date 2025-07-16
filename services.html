@@ -8,24 +8,20 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
-   background: linear-gradient(135deg, #2b2e4a, #5c258d, #4389a2);   
+      background: linear-gradient(135deg, #2b2e4a, #5c258d, #4389a2);
       color: #fff;
       font-family: Poppins, sans-serif;
     }
 
-    header, footer {
-      background: rgba(5, 110, 158, 0.8);
-      padding: 15px 20px;
+    .navbar {
+      background-color: rgba(5, 110, 158, 0.9);
     }
 
-    nav a {
-      color: #ccc;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
+    .navbar-nav .nav-link {
+      color: #fff;
     }
 
-    nav a:hover {
+    .navbar-nav .nav-link:hover {
       color: #00c9a7;
     }
 
@@ -73,7 +69,7 @@
     .service-card p {
       font-size: 15px;
       color: #ccc;
-       animation: fadeIn 1.2s;
+      animation: fadeIn 1.2s;
     }
 
     .hero-image {
@@ -91,7 +87,6 @@
       animation: fadeIn 1s ease-out;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -117,24 +112,28 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="d-flex justify-content-between align-items-center">
-    <div class="logo">
-      <img src="findas.png" alt="FINDAS Logo" style="height: 40px;" />
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="findas.png" alt="FINDAS Logo" height="40"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
+          <li class="nav-item"><a class="nav-link" href="sip.html">SIP Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="client-login.html">Client Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">Book Appointment</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="d-none d-md-flex">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="blog.html">Blog</a>
-      <a href="podcast.html">Podcast</a>
-      <a href="sip.html">SIP Calculator</a>
-      <a href="client-login.html">Client Login</a>
-      <a href="appointment.html">Book Appointment</a>
-    </nav>
-    <a href="client-login.html" class="btn btn-outline-light btn-sm">Client Login</a>
-  </header>
+  </nav>
 
   <!-- Title -->
   <div class="section-title">
@@ -145,58 +144,53 @@
   <!-- Services Grid -->
   <div class="container py-4">
     <div class="row">
-      <!-- Investment Planning -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 0.2s;">
-          <h4>Investment Planning</h4>
-          <p>Diverse portfolios—mutual funds, bonds, stocks, gold—tailored to risk profiles. Full support from account opening to execution.</p>
-        </div>
-      </div>
-
-      <!-- Insurance Planning -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 0.4s;">
-          <h4>Insurance Planning</h4>
-          <p>Comprehensive life & general insurance—health, accident, vehicle to property. Includes renewal and claim assistance since 1999.</p>
-        </div>
-      </div>
-
-      <!-- Corporate Solutions -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 0.6s;">
-          <h4>Corporate Solutions</h4>
-          <p>Employee financial wellness via interactive webinars, live and recorded—covering budgeting, investing, debt management.</p>
-        </div>
-      </div>
-
-      <!-- Stock Investing -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 0.8s;">
-          <h4>Stock Investing</h4>
-          <p>Blue‑chip portfolios and technical picks. Tailored risk guidance to help long- and short-term investors.</p>
-        </div>
-      </div>
-
-      <!-- WILL Writing -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 1s;">
-          <h4>WILL Writing</h4>
-          <p>Peace of mind ensured by customized will preparation—guiding you step-by-step for clarity and legal compliance.</p>
-        </div>
-      </div>
-
-      <!-- Futures Trading -->
-      <div class="col-md-4">
-        <div class="service-card" style="animation-delay: 1.2s;">
-          <h4>Futures Trading</h4>
-          <p>FINDAS NIFTY FUTURES model—structured, math-based trading delivering 3–5× FD returns, 15 mins/day commitment.</p>
-        </div>
-      </div>
+      <!-- Card Template -->
+      <script>
+        const services = [
+          {
+            title: "Investment Planning",
+            img: "ip.png",
+            summary: "We are dedicated to helping our clients achieve their financial goals. With a wide range of investment products to choose from, we offer solutions to suit every risk appetite. Our products include fixed return instruments, mutual funds (both equity and debt), gold funds, dynamic and fixed asset allocation products, bonds, and stocks. ",
+            more: "We understand the importance of risk assessment when it comes to investing, which is why we take the time to thoroughly evaluate our clients' financial profiles before recommending any products. This allows us to tailor our recommendations to each client's unique needs and goals. In addition to offering a diverse range of investment products, we also provide complete execution support to ensure a seamless investment experience. Our services include account opening, product education, transaction execution, tax considerations, and ongoing support to help our clients stay on track toward their financial objectives. Whether you are a seasoned investor or just starting out, we are here to help you grow your wealth and achieve financial success. "
+          },
+          {
+            title: "Insurance Planning",
+            img:"ep.png",
+            summary: "We understand that insurance plays a critical role in protecting our clients' financial well-being. That's why we offer a wide range of insurance products to meet our clients' diverse needs. We work with all major insurance companies to provide our clients with a comprehensive product portfolio, including both life insurance and general insurance products.",
+            more: " . Our insurance product offerings include health insurance, accident insurance, critical illness insurance, term plans, vehicle insurance, commercial insurance, property insurance, and much more. We are committed to providing our clients with multiple choices and ensuring that they have access to the best possible coverage to protect themselves and their loved ones. We pride ourselves on our ongoing support and services, including complete renewal and claim support. Our experienced team is dedicated to helping our clients throughout the entire insurance process, from selecting the right policy to filing a claim. We have a rich history of settling claims dating back to 1999, which gives our clients peace of mind knowing they are in good hands. With our experienced team and wide range of insurance products, we are confident in our ability to provide our clients with the protection and security they need."
+          },
+          {
+            title: "Corporate Solutions",
+            img:"cs.png",
+            summary: "Looking to improve your employees' financial wellness? At our company, we understand the importance of having financially literate employees who are satisfied with their job and their overall financial situation. We offer a unique Financial Management method that can help employers improve the financial well-being of their employees.",
+            more: " Our online live webinars and auto webinars cover a range of topics related to personal finance, including budgeting, saving, investing, and debt management. These webinars are designed to be engaging and interactive, providing practical tips and strategies that employees can use to improve their financial situation.By investing in the financial literacy of your employees, you can help them to better manage their money and reduce financial stress. This can lead to improved productivity, better morale, and a stronger overall company culture. Our Corporate Solutions are tailored to meet the specific needs of your organization, and we would be happy to discuss how we can help you improve the financial wellness of your employees. Contact us today to learn more about our Financial Management method and how it can benefit your company and your employees."
+          },
+          {
+            title: "Stock Investing",
+            img:"se.png",
+            summary: "Investing in stocks can be a risky venture and it's important to invest carefully. At our company, we understand the importance of making informed investment decisions, especially when it comes to the stock market. For investors looking for a long-term investment strategy, we offer a well-researched portfolio of blue-chip stocks.",
+            more: "  Our portfolio comprises of companies that have been in the market for several decades and have a proven track record of profitability and wealth creation for their investors. We charge nominal fees for investing in this portfolio, and an investment account needs to be opened with us. For those looking for short to medium-term investment opportunities, we offer technical picks that can provide potential returns within a few days to a few months. These investments are inherently risky, and investors need to make their investment decisions at their own risk and are fully responsible for the ultimate consequence. At our company, we prioritize the well-being of our clients and believe in offering personalized solutions that cater to their unique investment needs. Our team of experts carries out thorough research and analysis before offering any investment opportunities to our clients. Contact us to learn more about our investment strategies and how we can help you make informed investment decisions."
+          },
+          {
+            title: "WILL Writing",
+            img:"ww.png",
+            summary: "The topic of death is not an easy one to discuss, but it is important to be prepared for the inevitable. Many people resist the idea of writing a Will, but it is crucial to ensure that your assets are distributed according to your wishes after your passing. At our company, we offer complete Will writing services to make the process as smooth and stress-free as possible.",
+            more: "  By creating a Will, you can avoid leaving your loved ones in a state of confusion and uncertainty regarding the distribution of your wealth. Your Will ensures that your assets are distributed amongst your survivors as per your wishes, with minimal effort on their part. Our team of experts understands the importance of creating a Will and provides comprehensive services to guide you through the process. We take the time to understand your unique needs and wishes, and provide tailored solutions that meet your requirements. We believe that creating a Will is a responsible and caring decision, and it is our mission to make the process as simple and straightforward as possible for our clients. Contact us today to learn more about our Will writing services and how we can help you create a Will that gives you peace of mind."
+          },
+          {
+            title: "Futures Trading",
+            img:"ft.png",
+            summary: "Most Indians lose money in trading because they use their gut feeling, rather than a system. Indians love to speculate in the stock markets but unfortunately fail to learn the lesson. That is the reason we created the FINDAS NIFTY FUTURES TRADING MODEL. This is a system based on mathematical logic and it has been back tested till 2009.",
+            more: "  The aim of this model is to beat the bank FD returns by a margin of 3 to 5 times. So if the bank FD returns are 7% per annum, this model is expected to deliver anywhere between 21% to 35% per annum. The trading is done in Nifty futures. Few advantages - One makes money when market goes up and when market goes down, no prior knowledge of trading is required, no need to watch the markets continuously - just 15 mins per day and you are done, no analysis required you just need to follow the system and count your profits. Watch this video to know how to use the FINDAS NIFTY FUTURES TRADING MODEL",
+          }
+        ];
+      </script>
+      <div id="services-container" class="row"></div>
     </div>
 
     <!-- Related Image -->
     <div class="text-center">
-      <img src="finance-hero.png" alt="Finance Illustration" class="hero-image" />
+      <img src="fi.png" alt="Finance Illustration" class="hero-image" />
     </div>
   </div>
 
@@ -205,5 +199,45 @@
     <p>&copy; 2024 FINDAS. All rights reserved.</p>
     <p>Have questions? Call us: <a href="tel:+918888830440" class="text-warning">+91 88888 30440</a> | Mon–Sat 11 AM–5 PM</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Generate Services with Read More/Read Less -->
+  <script>
+    const servicesContainer = document.getElementById("services-container");
+    services.forEach((service, index) => {
+      const col = document.createElement("div");
+      col.className = "col-md-4";
+      col.innerHTML = `
+        <div class="service-card">
+           <img src="${service.img}" alt="${service.title}" />
+          <h4>${service.title}</h4>
+          <p>
+            ${service.summary}
+            <span id="dots${index}">...</span>
+            <span id="more${index}" style="display:none;">${service.more}</span>
+          </p>
+          <button class="btn btn-sm btn-outline-light" onclick="toggleReadMore('dots${index}','more${index}', this)">Read More</button>
+        </div>
+      `;
+      servicesContainer.appendChild(col);
+    });
+
+    function toggleReadMore(dotsId, moreId, btn) {
+      const dots = document.getElementById(dotsId);
+      const moreText = document.getElementById(moreId);
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        btn.innerText = "Read More";
+      } else {
+        dots.style.display = "none";
+        moreText.style.display = "inline";
+        btn.innerText = "Read Less";
+      }
+    }
+  </script>
 </body>
 </html>
