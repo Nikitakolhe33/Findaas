@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-   background: linear-gradient(135deg, #2b2e4a, #5c258d, #4389a2);   
+      background: linear-gradient(135deg, #000000, #3b3939, #ccc4c4);
       color: #333;
     }
     .container { max-width: 960px; margin: 30px auto; }
@@ -20,14 +20,21 @@
       margin-bottom: 20px;
     }
     .calculator {
-      background: #b8b3b3;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
+  background: #b8b3b3;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ✨ Add this */
+}
+
+.calculator:hover {
+  transform: scale(1.03); /* ✨ Zoom effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* ✨ Deeper shadow */
+}
+
     .result-box {
-      background: #83068f;
+      background: #f6f3f7;
       padding: 15px;
       margin-top: 15px;
       border-radius: 8px;
@@ -42,10 +49,10 @@
   </style>
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(5, 110, 158, 0.9);">
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background: #999;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="findas.png" alt="FINDAS Logo" style="height: 40px;">
+        <img src="logo.png" alt="FINDAS Logo" style="height: 120px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
