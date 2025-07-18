@@ -23,6 +23,7 @@
     .hero h1 {
       font-size: 48px;
       font-weight: 600;
+      color: chocolate;
     }
 
     .appointment-section {
@@ -57,6 +58,68 @@
         font-size: 32px;
       }
     }
+    .navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 2s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -79,7 +142,7 @@
           <li class="nav-item"><a class="nav-link" href="sip.html">SIP Calculator</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <!-- <li class="nav-item"><a class="nav-link" href="client-login.html">Client Login</a></li> -->
-          <li class="nav-item"><a class="nav-link" href="appointment.html"> Book An Appointment</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html" > Book An Appointment</a></li>
         </ul>
          <a href="client-login.html" class="btn btn-warning btn-sm">Client Login</a>
       </div>
@@ -89,7 +152,7 @@
   <!-- Hero Section -->
   <section class="hero" data-aos="zoom-in">
     <h1>Book Your Appointment</h1>
-    <p>Let’s plan your financial future today</p>
+    <p style="color: #cacac5;">Let’s plan your financial future today</p>
   </section>
 
   <!-- Appointment Form Section -->

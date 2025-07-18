@@ -75,6 +75,122 @@
       display: none;
       z-index: 99;
     }
+    /* 🔁 Hero image zoom-in on page load */
+.hero-carousel img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  animation: zoomInImg 1.5s ease-out;
+}
+
+@keyframes zoomInImg {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ✨ Hero text fade + slide up */
+.hero-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: white;
+  max-width: 600px;
+  animation: slideFade 1.2s ease-out;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-text {
+    left: 20px;
+    right: 20px;
+    font-size: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+}
+.navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 3s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
   </style>
 </head>
 <body>

@@ -55,9 +55,9 @@
     .content-area {
       flex: 3;
       min-width: 300px;
-      background: #ffffff;
+      background: #949090;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(109, 107, 107, 0.1);
       padding: 25px;
       animation: fadeInRight 1s ease forwards;
     }
@@ -68,7 +68,7 @@
     }
     .blog-meta {
       font-size: 14px;
-      color: #999;
+      color: #e2dbdb;
       margin-bottom: 10px;
     }
     .blog-title {
@@ -103,6 +103,68 @@
         margin-right: 0;
       }
     }
+    .navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 2s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -152,11 +214,7 @@
   </footer>
 
   <!-- Scroll to Top Button -->
-  <button onclick="topFunction()" id="scrollTopBtn" class="btn btn-primary rounded-circle shadow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-up" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V3.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 3.707V11.5A.5.5 0 0 0 8 12z"/>
-    </svg>
-  </button>
+  
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -610,7 +668,7 @@ CMP - 497
 <p>Stock is currently trading close to its 200 DMA. It looks well poised for a breakout with upward targets of 530/575/650/Higher. If the stock closes below 415, you can exit.</p>`
       },
       {
-        title: "HThe positive and negative implications",
+        title: "The positive and negative implications",
         image: "pos.png",
         date: "May 23, 2023",
         author: "samir Machawe",

@@ -42,7 +42,7 @@
       flex-wrap: wrap;
       gap: 40px;
       align-items: center;
-      background: #ffffff;
+      background: #686565;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
       border-radius: 12px;
       margin: 30px auto;
@@ -82,10 +82,10 @@
     .platform-buttons a:hover {
       transform: translateY(-3px);
     }
-    .spotify { background: #1db954; }
-    .redcircle { background: #ff3b3b; }
-    .radiopublic { background: #e91e63; }
-    .google { background: #4285F4; }
+    .spotify { background: #31503c; }
+    .redcircle { background: #aa5f5f; }
+    .radiopublic { background: #ca5f82; }
+    .google { background: #7da6e7; }
     footer {
       text-align: center;
       padding: 25px;
@@ -95,6 +95,68 @@
       margin-top: 60px;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
     }
+    .navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 2s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -128,7 +190,7 @@
   
 
   <!-- Breadcrumb -->
-  <section class="breadcrumb-section">
+  <section class="breadcrumb-section" style="color: whitesmoke;">
     Index / Podcast
   </section>
 
@@ -139,9 +201,9 @@
     </div>
     <div class="podcast-text">
       <h2>Welcome to FINTALK</h2>
-      <p>Hello &amp; Welcome to FINTALK – the financial freedom podcast. I am your host Samir Machawe. I am a financially free and take one vacation per month. I help people achieve financial freedom in their lives and currently I manage more than 100 crores of financial assets for my clients.</p>
-      <p>This podcast is designed to help you improve your financial management and move towards financial freedom. My mission is to create an access for people to live an abundant life and the life that they love.</p>
-      <p>By taking control of your finances, you can make sure that your money is working for you, not against you. Thank you for tuning in to the Financial Freedom Podcast, and I look forward to discussing more topics that can help you achieve your financial goals and eventually become financially free.</p>
+      <p style="color: rgb(37, 36, 36);">Hello &amp; Welcome to FINTALK – the financial freedom podcast. I am your host Samir Machawe. I am a financially free and take one vacation per month. I help people achieve financial freedom in their lives and currently I manage more than 100 crores of financial assets for my clients.</p>
+      <p style="color: rgb(37, 36, 36);">This podcast is designed to help you improve your financial management and move towards financial freedom. My mission is to create an access for people to live an abundant life and the life that they love.</p>
+      <p style="color: rgb(37, 36, 36);">By taking control of your finances, you can make sure that your money is working for you, not against you. Thank you for tuning in to the Financial Freedom Podcast, and I look forward to discussing more topics that can help you achieve your financial goals and eventually become financially free.</p>
       <div class="platform-buttons">
         <a href="https://open.spotify.com/show/6NdZGIqNIAgFB9LFvAbi1n" target="_blank" class="spotify">Spotify</a>
         <a href="https://redcircle.com/shows/99cc1b0b-04a6-4dde-b30f-873f6ca557cc" class="redcircle" target="_blank">Redcircle</a>

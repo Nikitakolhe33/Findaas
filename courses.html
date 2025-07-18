@@ -11,16 +11,79 @@
  font-size:14px; margin-top:40px;; color:#333; }
     .header { background:#04333e; padding:15px; color:#fff; display:flex; justify-content:space-between; align-items:center; }
     .header nav a { color:#ddd; margin:0 10px; text-decoration:none; }
-    .header nav a:hover { color:#00c9a7; }
+    .header nav a:hover { color:#c99a00; }
     .container-main { max-width:1000px; margin:40px auto; }
-    .section-title { font-size:32px; font-weight:600; margin-bottom:20px; color:#007bff; }
-    .card-course { background:#fff; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); padding:20px; margin-bottom:20px; transition:transform .3s; }
+    .section-title { font-size:32px; font-weight:600; margin-bottom:20px; color:chocolate; }
+    .card-course { background:#c9c1c1; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); padding:20px; margin-bottom:20px; transition:transform .3s; }
     .card-course:hover { transform:translateY(-5px); }
     .card-course h5 { margin-bottom:10px; color:#004080; }
     .card-course p { margin-bottom:10px; color:#0e0b0b; }
-    .card-course a { text-decoration:none; font-weight:600; color:#007bff; }
+    .card-course a { text-decoration:none; font-weight:600; color:rgb(8, 85, 99); }
     .card-course a:hover { text-decoration:underline; }
-    footer { text-align:center; padding:20px; background:#111; background: linear-gradient(135deg, #2b2e4a, #5c258d, #4389a2); font-size:14px; margin-top:40px; }
+    footer { text-align:center; padding:20px; background:#111; background: linear-gradient(135deg, #726d6d, #2e2c2c, #ccc4c4); font-size:14px; margin-top:40px; }
+    .navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 2s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -58,7 +121,7 @@
 
     <!-- Paid Courses Section -->
     <div data-aos="fade-right" data-aos-delay="100">
-      <h4>Paid Courses</h4>
+      <h4 style="color: rgb(149, 156, 156);">Paid Courses</h4>
       <div class="card-course">
         <h5><a href="https://samirmachawe4773.ongraphy.com/courses/Technical-Analysis---Basic-Course-623d8fef0cf207a40a6a3e59">Technical Analysis – Basic Course</a></h5>
         <p>Learn chart patterns, indicators, and tools to make informed trading decisions.</p>
@@ -75,7 +138,7 @@
 
     <!-- Free Courses Section -->
     <div class="mt-4" data-aos="fade-left" data-aos-delay="100">
-      <h4>Free Courses</h4>
+      <h4 style="color: rgb(174, 204, 212); ;">Free Courses</h4>
       <div class="card-course">
         <h5><a href="https://samirmachawe4773.ongraphy.com/courses/How-to-deal-with-equity-market-fall-in-year-2022-62aafc610cf2bdd1ffdb3540">How to deal with equity market fall in year 2022</a></h5>
         <p>Tips and strategies to stay calm and resilient during market downturns.</p>
@@ -95,7 +158,7 @@
     </div>
 
     <!-- Contact Info -->
-    <div class="mt-5 p-4 bg-white text-center">
+    <div class="mt-5 p-4 bg-gray text-center">
       <p>Have a question? Call us now</p>
       <h5>+91‑88888‑30440</h5>
       <p>Mon – Sat 11 AM to 5 PM</p>
@@ -104,7 +167,7 @@
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer style="color: #000000;">
     © 2025 FINDAS. All rights reserved.<br>
     Office: Flat C‑301, 3rd floor Ishwar Pratishta 3, Nashik – 422009
   </footer>

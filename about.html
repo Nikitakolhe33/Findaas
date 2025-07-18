@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <style>
     body {
-   color: #fff;
-      background: linear-gradient(135deg, #000000, #3b3939, #ccc4c4);
+   color: #b4aaaa;
+      background: linear-gradient(135deg, #706d6d, #3b3939, #524f4f);
       font-family: 'Poppins', sans-serif;
     }
 
@@ -19,14 +19,14 @@
     }
 
     nav a {
-      color: #ccc;
+      color: #4b4646;
       margin: 0 10px;
       text-decoration: none;
       font-weight: 500;
     }
 
     nav a:hover {
-      color: #ffcc00;
+      color: #ff7b00;
     }
 
     .hero {
@@ -43,17 +43,22 @@
       font-size: 20px;
       max-width: 700px;
       margin: 20px auto;
-      color: #c9c9c9;
+      color: #615a5a;
       animation: fadeIn 1.2s ease-in;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.08); /* Transparent */
+      background: rgba(112, 102, 102, 0.08); /* Transparent */
       border: none;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow:none;
       transition: transform 0.3s ease;
+       
     }
+    .card:hover {
+  box-shadow: 0 8px 25px rgba(8, 182, 182, 0.4); /* Green shadow on hover */
+  transform: translateY(-5px); /* Slight lift */
+}
 
     .card:hover {
       transform: scale(1.03);
@@ -68,7 +73,7 @@
 
     footer p {
       margin: 5px 0;
-      color: #ccc;
+      color: #1b1a1a;
     }
 
     .fade-up {
@@ -91,8 +96,99 @@
 
     .icon-box i {
       font-size: 36px;
-      color: #ffcc00;
+      color: #0b7dc9;
+      
+      /* color: #ff7b00; */
     }
+    .navbar-brand {
+  animation: logoZoom 1.2s ease-out forwards;
+  transform: scale(0.5);
+  opacity: 0;
+  display: inline-block;
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 120px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(196, 197, 103, 0.4));
+  transition: transform 0.3s ease;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-25deg);
+  z-index: 3;
+  animation: shineEffect 2s ease-out infinite;
+}
+
+@keyframes shineEffect {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+.read-more-content {
+  display: none;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.read-more-btn {
+  background-color: #6d8585; /* warning color */
+  color: #1f1e1e;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.read-more-btn:hover {
+  background-color: #eea508;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(17, 17, 17, 0.6);
+}
+
+
+   
   </style>
 </head>
 <body>
@@ -125,60 +221,78 @@
 
 <section class="hero">
   <h1 class="fade-up">Welcome FINDAS</h1>
-  <p class="fade-up">FINDAS is a one-stop solution for investment, insurance, financial coaching and planning — led by passionate individuals dedicated to your abundance.</p>
+  <p class="fade-up" style="color: black;">FINDAS is a one-stop solution for investment, insurance, financial coaching and planning — led by passionate individuals dedicated to your abundance.</p>
 </section>
 
 <!-- Founders -->
 <div class="container my-5 text-center">
-  <h2 class="fade-up mb-4">Meet the Visionaries</h2>
+  <h2 class="fade-up mb-4" style="color: #31302f;">Our Guiding Lights –<strong> Meet the Leaders</strong></h2>
   <div class="row g-4 justify-content-center">
     <div class="col-md-6 fade-up">
       <div class="card p-4">
-        <img src="sm.png" alt="Aparna Machawe" class="mx-auto d-block" />
-        <div class="card-body">
-          <h5 class="card-title text-warning">Late Smt. Aparna Samir Machawe</h5>
-          <p class="card-subtitle mb-2 text-muted">(1974–2021)</p>
-          <p class="card-text text-light small ">
-           Investing and insurance can be complex and overwhelming for many people, and that's where FINDAS comes in. With over two decades of experience in the field, we have a deep understanding of the various financial products and investment options available to our clients. At FINDAS, we believe in transparency and ethical business practices. We value knowledge sharing with our clients, empowering them to become financially literate investors. We want our clients to feel confident and in control of their finances, and we strive to provide them with a holistic view of their financial lives.<br>
+  <img src="sm.png" alt="Aparna Machawe" class="mx-auto d-block" />
+  <div class="card-body">
+    <h5 class="card-title text-warning"><strong>Late Smt. Aparna Samir Machawe</strong></h5>
+    <p class="card-subtitle mb-2 text-muted">(1974–2021)</p>
+    
+    <!-- Visible part -->
+    <p class="card-text text-light small">
+      
+           Investing and insurance can be complex and overwhelming for many people, and that's where FINDAS comes in. With over two decades of experience in the field, we have a deep understanding of the various financial products and investment options available to our clients. At FINDAS, we believe in transparency and ethical business practices. We value knowledge sharing with our clients, empowering them to become financially literate investors. We want our clients to feel confident and in control of their finances, and we strive to provide them with a holistic view of their financial lives.
+    </p>
 
-Our approach to investing involves a judicious blend of multiple assets and financial products, tailored to each client's unique needs and goals. We understand that implementing an investment plan can be daunting, which is why we provide personalized support and guidance throughout the process. To ensure that our clients stay on track, we conduct periodic financial investment reviews. We believe that the personal touch is essential to building strong, long-lasting relationships with our clients. We take the time to understand each client's personal financial perceptions and customize their investing process to suit their comfort zone.<br>
-
-Ultimately, our goal is to help our clients achieve financial freedom and time freedom. We want their money to work hard for them, so they can enjoy the benefits of a secure financial future. At FINDAS, we are committed to helping our clients reach their financial goals through a transparent, personalized, and ethical approach to investing and insurance.
-          </p>
-        </div>
-      </div>
+    <!-- Hidden extra content -->
+    <div class="read-more-content" style="display: none;">
+      <p class="card-text text-light small">
+        Our approach to investing involves a judicious blend of multiple assets and financial products, tailored to each client's unique needs and goals. We understand that implementing an investment plan can be daunting, which is why we provide personalized support and guidance throughout the process. To ensure that our clients stay on track, we conduct periodic financial investment reviews. We believe that the personal touch is essential to building strong, long-lasting relationships with our clients. We take the time to understand each client's personal financial perceptions and customize their investing process to suit their comfort zone.<br>
+        <br>
+       Ultimately, our goal is to help our clients achieve financial freedom and time freedom. We want their money to work hard for them, so they can enjoy the benefits of a secure financial future. At FINDAS, we are committed to helping our clients reach their financial goals through a transparent, personalized, and ethical approach to investing and insurance.
+        <br><br>
+       
+      </p>
     </div>
-    <div class="col-md-6 fade-up">
-      <div class="card p-4">
-        <img src="sm2.png" alt="Samir Machawe" class="mx-auto d-block" />
-        <div class="card-body">
-          <h5 class="card-title text-warning">Mr. Samir Machawe</h5>
-          <p class="card-subtitle mb-2 text-muted">Financial Freedom Coach</p>
-          <p class="card-text text-light small">
-            Samir Machawe is a Author, TLC Certified Financial Freedom Coach, Investor, YouTuber, Podcaster, Avid reader, World Traveller and Financially free. He is also a member of BNI Alpha Nashik and TLC Sirius. With a passion for helping people achieve financial independence and live their dream life, Samir Machawe has dedicated his career to sharing his expertise and insights with others.<br>
 
-As a financial freedom coach, Samir works with individuals and businesses to help them develop a comprehensive investment strategies that aligns with their goals and values. His coaching programs cover a wide range of topics, from budgeting and saving to investing and retirement planning. Samir's goal is to help his clients achieve financial freedom and build wealth for themselves and their families.<br>
+    <!-- Read More button -->
+    <button class="btn btn-outline-warning btn-sm read-more-btn">Read More</button>
+  </div>
+</div>
+ </div>
+ 
 
-In addition to his coaching work, Samir Machawe is also a successful author. His book, "25 Habits That Make You Rich," is a comprehensive guide to building wealth and achieving financial independence. In the book, Samir Machawe shares his personal journey to financial freedom and provides readers with 25 practical tips and strategies for achieving their own financial goals.
-<br>
-As an avid traveler, Samir Machawe believes that experiencing different cultures and perspectives is an essential part of personal growth and development. He has traveled extensively throughout the world, immersing himself in new cultures and exploring the beauty and diversity of different countries. Through his travels, Samir Machawe has gained valuable insights into the global economy and the financial systems of different countries.<br>
+<div class="col-md-6 fade-up">
+  <div class="card p-4">
+    <img src="sm2.png" alt="Samir Machawe" class="mx-auto d-block" />
+    <div class="card-body">
+      <h5 class="card-title text-warning"><strong>Mr. Samir Machawe</strong></h5>
+      <p class="card-subtitle mb-2 text-muted">Financial Freedom Coach</p>
+      <p class="card-text text-light small">
+      Samir Machawe is a Author, TLC Certified Financial Freedom Coach, Investor, YouTuber, Podcaster, Avid reader, World Traveller and Financially free. He is also a member of BNI Alpha Nashik and TLC Sirius. With a passion for helping people achieve financial independence and live their dream life, Samir Machawe has dedicated his career to sharing his expertise and insights with others.</p><br><br>
+      <p class="card-text text-light small read-more-content">
+        
 
-Whether he's coaching clients, writing books, or exploring new corners of the world, Samir Machawe is committed to helping others achieve financial freedom and live their best lives. With his wealth of knowledge and experience, he is a trusted advisor and mentor to anyone seeking to take control of their financial future..
-          </p>
-        </div>
-      </div>
+        As a financial freedom coach, Samir works with individuals and businesses to help them develop a comprehensive investment strategies that aligns with their goals and values. His coaching programs cover a wide range of topics, from budgeting and saving to investing and retirement planning. Samir's goal is to help his clients achieve financial freedom and build wealth for themselves and their families.<br><br>
+
+        In addition to his coaching work, Samir Machawe is also a successful author. His book, "25 Habits That Make You Rich," is a comprehensive guide to building wealth and achieving financial independence. In the book, Samir Machawe shares his personal journey to financial freedom and provides readers with 25 practical tips and strategies for achieving their own financial goals.<br><br>
+
+        As an avid traveler, Samir Machawe believes that experiencing different cultures and perspectives is an essential part of personal growth and development. He has traveled extensively throughout the world, immersing himself in new cultures and exploring the beauty and diversity of different countries. Through his travels, Samir Machawe has gained valuable insights into the global economy and the financial systems of different countries.<br><br>
+
+        Whether he's coaching clients, writing books, or exploring new corners of the world, Samir Machawe is committed to helping others achieve financial freedom and live their best lives. With his wealth of knowledge and experience, he is a trusted advisor and mentor to anyone seeking to take control of their financial future.
+      </p>
+
+      <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
     </div>
   </div>
 </div>
 
+
 <!-- Vision Mission Value Section -->
 <div class="container my-5">
-  <h2 class="text-center mb-4">Our Core Values</h2>
+  <h2 class="text-center mb-4" style="color:rgb(106, 185, 221);"><strong>Our Core Values</strong></h2>
   <div class="row g-4 text-dark">
     <div class="col-md-4">
       <div class="card p-4 text-center">
         <div class="icon-box mb-3"><i class="bi bi-lightbulb-fill"></i></div>
-        <h5 class="text-dark">Our Vision</h5>
+        <h5 style="color:  #009ac9;">Our Vision</h5>
         <hr>
         <p>We strive to create powerful and actionable financial strategies such that our clients experience financial abundance over time. We act passionately to create lasting value for clients, employees, partners, and society.</p>
       </div>
@@ -186,7 +300,7 @@ Whether he's coaching clients, writing books, or exploring new corners of the wo
     <div class="col-md-4">
       <div class="card p-4 text-center">
         <div class="icon-box mb-3"><i class="bi bi-send-fill"></i></div>
-        <h5 class="text-dark">Our Mission</h5>
+        <h5 style="color:  #00abc9;">Our Mission</h5>
         <hr>
         <p>To create an access for people to live an abundant life and the life that they love.</p>
       </div>
@@ -194,7 +308,7 @@ Whether he's coaching clients, writing books, or exploring new corners of the wo
     <div class="col-md-4">
       <div class="card p-4 text-center">
         <div class="icon-box mb-3"><i class="bi bi-heart-fill"></i></div>
-        <h5 class="text-dark">Our Value</h5>
+        <h5 style="color:  #00abc9;">Our Value</h5>
         <hr>
         <p><strong>ABUNDANCE</strong> – we believe everyone seeks abundance in life.<br>
            <strong>CONTRIBUTION</strong> – we love to contribute to the world in our unique way.<br>
@@ -205,20 +319,42 @@ Whether he's coaching clients, writing books, or exploring new corners of the wo
 </div>
 <!-- YouTube Section -->
 <div class="container my-5 fade-up">
-  <h3 class="text-center text-warning">Financial Education with Findas Marathi</h3>
+  <h3 class="text-center text-warning">Financial Education with <strong >Findas Marathi</strong></h3>
   <div class="row mt-4 align-items-center">
     <div class="col-md-5 text-center">
-      <img src="sm2.png" alt="Findas Marathi" class="img-fluid rounded-circle shadow" style="max-width: 200px;">
+<img src="sm3.png" alt="Findas Marathi"
+     class="img-fluid rounded-circle shadow"
+     style="width: 200px; height: 200px; object-fit: cover;">
     </div>
     <div class="col-md-7 text-white">
-      <p class="fs-5">At <strong>Findas Marathi</strong>, we believe financial literacy is the base of financial independence. Our YouTube channel delivers simplified videos, insights, and expert tips to empower your financial future.</p>
+      <p>At Findas Marathi, we believe financial literacy is the base of financial independence.</p>
+        <p>Our YouTube channel delivers simplified videos, insights, and expert tips to empower your financial future.</p>
       <a href="https://youtu.be/x8ZMds7EYLI" target="_blank" class="btn btn-danger mt-2">
         <i class="bi bi-youtube"></i> Watch Us on YouTube
       </a>
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".read-more-btn");
 
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const cardBody = this.closest(".card-body");
+        const content = cardBody.querySelector(".read-more-content");
+
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          this.textContent = "Read Less";
+        } else {
+          content.style.display = "none";
+          this.textContent = "Read More";
+        }
+      });
+    });
+  });
+</script>
 
 <footer class="text-center py-4">
   <p>&copy; 2024 FINDAS. All rights reserved.</p>
