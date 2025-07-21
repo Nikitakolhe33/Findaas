@@ -9,7 +9,7 @@
   <style>
     body {
    color: #b4aaaa;
-      background: linear-gradient(135deg, #706d6d, #3b3939, #524f4f);
+      background: linear-gradient(135deg, #242323, #3b3939, #020202);
       font-family: 'Poppins', sans-serif;
     }
 
@@ -36,7 +36,7 @@
 
     .hero h1 {
       font-size: 48px;
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 5s ease-in infinite;
     }
 
     .hero p {
@@ -44,7 +44,7 @@
       max-width: 700px;
       margin: 20px auto;
       color: #615a5a;
-      animation: fadeIn 1.2s ease-in;
+      animation: fadeIn 5s ease-in infinite;
     }
 
     .card {
@@ -187,11 +187,29 @@
   box-shadow: 0 0 10px rgba(17, 17, 17, 0.6);
 }
 
+ .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #040a14; /* Blue background */
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1000;
+    display: none; /* By default hidden */
+  }
 
+  .back-to-top:hover {
+    background-color: #0b5ed7;
+  }
    
   </style>
 </head>
 <body>
+<a href="#top" class="back-to-top" title="Back to Top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+  </svg>
+</a>
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -220,13 +238,13 @@
 </header>
 
 <section class="hero">
-  <h1 class="fade-up">Welcome FINDAS</h1>
-  <p class="fade-up" style="color: black;">FINDAS is a one-stop solution for investment, insurance, financial coaching and planning — led by passionate individuals dedicated to your abundance.</p>
+  <h1 class="fade-up"><strong>Welcome FINDAS</strong> </h1>
+  <p class="fade-up" style="color: rgb(179, 164, 164);">FINDAS is a one-stop solution for investment, insurance, financial coaching and planning — led by passionate individuals dedicated to your abundance.</p>
 </section>
 
 <!-- Founders -->
 <div class="container my-5 text-center">
-  <h2 class="fade-up mb-4" style="color: #31302f;">Our Guiding Lights –<strong> Meet the Leaders</strong></h2>
+  <h2 class="fade-up mb-4" style="color: #d6cec5;">Our Guiding Lights –<strong> Meet the Leaders</strong></h2>
   <div class="row g-4 justify-content-center">
     <div class="col-md-6 fade-up">
       <div class="card p-4">
@@ -294,7 +312,7 @@
         <div class="icon-box mb-3"><i class="bi bi-lightbulb-fill"></i></div>
         <h5 style="color:  #009ac9;">Our Vision</h5>
         <hr>
-        <p>We strive to create powerful and actionable financial strategies such that our clients experience financial abundance over time. We act passionately to create lasting value for clients, employees, partners, and society.</p>
+        <p style="color: #b4aaaa;">We strive to create powerful and actionable financial strategies such that our clients experience financial abundance over time. We act passionately to create lasting value for clients, employees, partners, and society.</p>
       </div>
     </div>
     <div class="col-md-4">
@@ -302,7 +320,7 @@
         <div class="icon-box mb-3"><i class="bi bi-send-fill"></i></div>
         <h5 style="color:  #00abc9;">Our Mission</h5>
         <hr>
-        <p>To create an access for people to live an abundant life and the life that they love.</p>
+        <p style="color: #b4aaaa;">To create an access for people to live an abundant life and the life that they love.</p>
       </div>
     </div>
     <div class="col-md-4">
@@ -310,9 +328,9 @@
         <div class="icon-box mb-3"><i class="bi bi-heart-fill"></i></div>
         <h5 style="color:  #00abc9;">Our Value</h5>
         <hr>
-        <p><strong>ABUNDANCE</strong> – we believe everyone seeks abundance in life.<br>
-           <strong>CONTRIBUTION</strong> – we love to contribute to the world in our unique way.<br>
-           <strong>FREEDOM</strong> – we strive to create financial freedom which leads to time freedom for our clients.</p>
+        <p style="color: #b4aaaa;"><strong style="color: #0bbcc9;">ABUNDANCE</strong> – we believe everyone seeks abundance in life.<br>
+           <strong style="color: #0bbcc9;">CONTRIBUTION</strong> – we love to contribute to the world in our unique way.<br>
+           <strong style="color: #0bbcc9;">FREEDOM</strong> – we strive to create financial freedom which leads to time freedom for our clients.</p>
       </div>
     </div>
   </div>
@@ -360,6 +378,16 @@
   <p>&copy; 2024 FINDAS. All rights reserved.</p>
   <p>Office: Flat C‑301, 3rd floor Ishwar Pratishta 3, Nashik – 422009</p>
 </footer>
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

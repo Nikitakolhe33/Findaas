@@ -10,13 +10,13 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg,  #949090, #272626, #ccc4c4);
+      background: linear-gradient(135deg,  #949090, #272626, #6d6969);
       margin: 0;
     }
 
     .hero {
-      background: linear-gradient(rgba(24, 23, 24, 0.863), rgba(63, 61, 61, 0.5)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df') no-repeat center center/cover;
-   background: linear-gradient#494747;   
+      background: linear-gradient(rgba(26, 25, 26, 0.863), rgba(44, 43, 43, 0.5)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df') no-repeat center center/cover;
+   background: linear-gradient#706c6c;   
       text-align: center;
       padding: 80px 20px;
     }
@@ -142,17 +142,36 @@
     left: 125%;
   }
 }
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #03070e; /* Blue background */
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1000;
+    display: none; /* By default hidden */
+  }
 
+  .back-to-top:hover {
+    background-color: #0b5ed7;
+  }
   </style>
 </head>
 <body>
+  <a href="#top" class="back-to-top" title="Back to Top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+  </svg>
+</a>
+
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="contact.html"><img src="logo.png" alt="FINDAS Logo" height="120"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav" >
+      <div class="collapse navbar-collapse" id="navbarNav" style="color: #949090;" >
        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -229,6 +248,16 @@
   <footer>
     &copy; 2025 FINDAS Financial Services. All rights reserved.
   </footer>
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
 
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

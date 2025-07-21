@@ -107,10 +107,29 @@
     left: 125%;
   }
 }
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #02060c; /* Blue background */
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1000;
+    display: none; /* By default hidden */
+  }
 
+  .back-to-top:hover {
+    background-color: #0b5ed7;
+  }
   </style>
 </head>
 <body>
+  <a href="#top" class="back-to-top" title="Back to Top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+  </svg>
+</a>
+
  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #999;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -222,6 +241,16 @@
   &copy; 2025 FINDAS. All rights reserved.<br>
   Flat C‑301, 3rd Floor, Ishwar Pratishta 3, Nashik – 422009 | Call: +91‑88888‑30440
 </footer>
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
 
 <script>
   function calculateSIP() {
